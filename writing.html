@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing — Ridhik Govind</title>
+  <meta name="description" content="Essays and notes by Ridhik Govind on design, AI, process, and the things worth thinking about." />
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-name">Ridhik Govind</a>
+    <ul class="nav-links">
+      <li><a href="writing.html" class="nav-active">Writing</a></li>
+      <li><a href="talks.html">Talks</a></li>
+      <li><a href="how-i-work.html">How I work</a></li>
+    </ul>
+  </nav>
+
+
+  <main>
+
+    <!-- PAGE HEADER -->
+    <section class="page-hero">
+      <h1 class="page-title">Writing</h1>
+      <p class="page-sub">Things I think about when I am not designing. Sometimes about design anyway.</p>
+      <p class="page-body">
+        I write when something is bothering me enough that I need to figure it out in words. No schedule, no newsletter,
+        no consistency goals. Just things worth writing down when they show up.
+      </p>
+
+      <!-- FILTER TAGS -->
+      <div class="filter-tags" id="filters">
+        <button class="filter-tag active" data-filter="all">All</button>
+        <button class="filter-tag" data-filter="design">Design</button>
+        <button class="filter-tag" data-filter="ai">AI</button>
+        <button class="filter-tag" data-filter="process">Process</button>
+        <!-- <button class="filter-tag" data-filter="career">Career</button> -->
+      </div>
+    </section>
+
+    <!-- ESSAY LIST -->
+    <section class="essays-full-section">
+      <div class="essay-full-list" id="essayList">
+
+        <a href="writing/designers-using-ai-wrong.html" class="essay-full-item" data-category="ai">
+          <div class="essay-full-top">
+            <span class="essay-full-title">Designers are using AI the wrong way</span>
+          </div>
+          <div class="essay-full-meta">
+            <span class="essay-tag">Design</span>
+            <span class="essay-full-read-time">5 min read</span>
+          </div>
+        </a>
+
+        <a href="writing/nobody-asked-the-right-questions.html" class="essay-full-item" data-category="design">
+          <div class="essay-full-top">
+            <span class="essay-full-title">Nobody asked the right questions. That is why the redesign failed.</span>
+          </div>
+          <div class="essay-full-meta">
+            <span class="essay-tag">Design</span>
+            <span class="essay-full-read-time">3 min read</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© <span id="year">2025</span> Ridhik Govind</span>
+    <span>Designed &amp; built with care · Kerala, India</span>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Filter logic
+    const filters = document.querySelectorAll('.filter-tag');
+    const essays = document.querySelectorAll('.essay-full-item');
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        essays.forEach(essay => {
+          const match = filter === 'all' || essay.dataset.category === filter;
+          essay.style.display = match ? '' : 'none';
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

@@ -18,8 +18,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ridhikgovind.com/" />
   <meta property="og:title" content="Ridhik Govind — Product Designer" />
-  <meta property="og:description"
-    content="I design products people actually want to use." />
+  <meta property="og:description" content="I design products people actually want to use." />
   <meta property="og:image" content="https://ridhikgovind.com/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -30,8 +29,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://ridhikgovind.com/" />
   <meta name="twitter:title" content="Ridhik Govind — Product Designer" />
-  <meta name="twitter:description"
-    content="I design products people actually want to use." />
+  <meta name="twitter:description" content="I design products people actually want to use." />
   <meta name="twitter:image" content="https://ridhikgovind.com/og-image.jpg" />
   <meta name="twitter:creator" content="@fluffyRidz" />
 
@@ -86,10 +84,11 @@
         I design products people actually want to use.
       </h1>
       <p class="hero-sub">
-        Hi, I'm Ridhik, a product designer who loves taking products from 0 to 1 by truly understanding what people need and turning that into something simple and beautiful. <br><br>
+        Hi, I'm <span class="hero-name-hover">Ridhik</span>, a product designer who loves taking products from 0 to 1 by
+        truly understanding what people need
+        and turning that into something simple and beautiful. <br><br>
 
-        <span>Currently working as a Senior Product Designer at <a
-            href="https://webandcrafts.com">Webandcrafts</a></span>
+        <span>Currently working as a Senior Product Designer at <span class="hero-wac-hover">Webandcrafts</span></span>
       </p>
 
 
@@ -97,7 +96,7 @@
 
       <!-- WRITING -->
       <section id="writing">
-        <h2 class="section-label">Latest essays</h2>
+        <h2 class="section-label">Latest writings</h2>
         <div class="essay-list">
 
           <a href="writing/designers-using-ai-wrong.html" class="essay-item">
@@ -143,11 +142,30 @@
   <!-- FOOTER -->
   <footer>
     <span>© <span id="year">2025</span> Ridhik Govind</span>
-    <span>Designed & built with care · Kerala, India</span>
+    <span id="footer-quip"></span>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const quips = [
+      "Still not sure if that padding is right.",
+      "The client wanted it blue. We compromised.",
+      "Shipped it anyway.",
+      "Somewhere between the brief and Figma, the truth lives.",
+      "The design was perfect. Then the meeting happened.",
+      "Built with too much tea and not enough sleep.",
+      "The first version was worse. Trust me.",
+      "Figma crashed twice making this.",
+      "The font took longer to pick than the layout.",
+      "Designed by someone who still zooms into pixels at 3am.",
+      "The PM said two weeks. It took four. Worth it.",
+      "Every screen you see went through at least five bad versions first.",
+      "I almost went with a different shade of brown.",
+      "Designed in Kerala, overthought everywhere.",
+      "The spacing is intentional. Mostly."
+    ];
+    document.getElementById("footer-quip").textContent = quips[Math.floor(Math.random() * quips.length)];
   </script>
 
 </body>

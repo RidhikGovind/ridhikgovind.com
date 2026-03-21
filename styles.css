@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+
 @font-face {
   font-family: 'Geist';
   src: url('fonts/Geist-Regular.woff2') format('woff2');
@@ -118,16 +120,59 @@ nav {
 }
 
 .nav-name {
-  font-family: var(--serif);
-  font-size: 15px;
-  font-weight: 500;
+  font-family: 'Caveat', cursive;
+  font-size: 24px;
+  font-weight: 600;
   color: var(--ink);
   text-decoration: none;
   letter-spacing: 0.01em;
+  position: relative;
+  display: inline-flex;
 }
 
 .nav-name span {
   color: var(--accent);
+}
+
+/* Chat Bubble on Hover */
+.nav-name::after {
+  content: "Hey you! \1F44B";
+  /* Wave emoji using Unicode escape if necessary, but direct char works too: 👋 */
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: #1a1a1a;
+  color: #ffffff;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 14px;
+  border-top-left-radius: 2px;
+  /* Speech bubble tail pointing to text */
+  white-space: nowrap;
+
+  /* 3D and shadow styling */
+  box-shadow:
+    0px 4px 14px rgba(0, 0, 0, 0.15),
+    0px 2px 4px rgba(0, 0, 0, 0.1),
+    0px 1px 0px rgba(255, 255, 255, 0.1) inset,
+    0px -2px 0px rgba(0, 0, 0, 0.2) inset,
+    0px 0px 0px 1px rgba(0, 0, 0, 0.2);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px) scale(0.95);
+  transform-origin: top left;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 200;
+}
+
+.nav-name:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px) scale(1);
 }
 
 .nav-links {
@@ -195,6 +240,101 @@ section+section {
   line-height: 1.75;
   max-width: 520px;
   margin-bottom: 32px;
+}
+
+.hero-name-hover {
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-lt);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.hero-name-hover::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  margin-top: 2px; /* Line height padding covers ~6px, this adds 2px for precisely 8px visual gap */
+  bottom: auto;
+  left: 50%;
+  width: 150px;
+  height: 160px;
+  background-image: url('ridhik-polaroid-4-onhover.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  mix-blend-mode: multiply; /* Gracefully removes the jpeg background */
+  /* Replaced border and box-shadow to prevent weird clipping boundaries */
+
+  /* Initial state: Angled 10 degrees, dropped slightly */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(24px) rotate(10deg);
+  /* Fast ease in, smooth ease out */
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 9999;
+}
+
+.hero-name-hover:hover {
+  z-index: 50; /* Forces the container to climb above all sibling text layers */
+}
+
+.hero-name-hover:hover::before {
+  opacity: 1;
+  visibility: visible;
+  /* Final state: Moves up, maintains 10 degrees */
+  transform: translateX(-50%) translateY(0) rotate(10deg);
+}
+
+.hero-wac-hover {
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-lt);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.hero-wac-hover:hover {
+  color: var(--accent);
+  z-index: 50;
+}
+
+.hero-wac-hover::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  margin-top: 2px; /* 8px visual distance (compensates for inline-block line-height padding) */
+  left: 50%;
+  width: 120px;
+  height: 48px;
+  background-image: url('wac-logo-onhover.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(10px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 9999;
+}
+
+.hero-wac-hover:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 .hero-tags {
@@ -451,17 +591,20 @@ section+section {
 
 .contact-links a {
   font-size: 14px;
-  font-weight: 500;
-  color: var(--ink);
-  text-decoration: none;
-  border-bottom: 1.5px solid var(--accent-lt);
-  padding-bottom: 1px;
-  transition: border-color 0.2s, color 0.2s;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-lt);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.2s;
 }
 
 .contact-links a:hover {
   color: var(--accent);
-  border-color: var(--accent);
 }
 
 /* FOOTER */
@@ -484,11 +627,11 @@ footer a:hover {
   color: var(--accent);
 }
 
-/* FADE IN */
+/* FADE IN - Notion Style */
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(12px);
   }
 
   to {
@@ -497,24 +640,45 @@ footer a:hover {
   }
 }
 
+nav {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 .hero-greeting {
-  animation: fadeUp 0.6s ease both;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
 }
 
 .hero-sub {
-  animation: fadeUp 0.6s 0.1s ease both;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
 .hero-tags {
-  animation: fadeUp 0.6s 0.2s ease both;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
 }
 
 .photo-strip {
-  animation: fadeUp 0.6s 0.3s ease both;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+#writing,
+.page-hero,
+.talks-section,
+.essays-full-section,
+.hiw-sections {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+#contact,
+.essay-article-footer {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+footer {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
 }
 
 /* RESPONSIVE */
-@media (max-width: 520px) {
+@media (max-width: 600px) {
   .exp-item {
     grid-template-columns: 1fr;
     gap: 4px;
@@ -524,12 +688,26 @@ footer a:hover {
     margin-bottom: 4px;
   }
 
-  .nav-links {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 18px 24px;
     gap: 16px;
   }
 
-  .nav-links li:nth-child(n+3) {
-    display: none;
+  .nav-links {
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 28px 24px;
   }
 }
 
@@ -551,14 +729,14 @@ footer a:hover {
   color: var(--ink);
   letter-spacing: -0.02em;
   margin-bottom: 10px;
-  animation: fadeUp 0.6s ease both;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
 }
 
 .page-sub {
   font-size: 16px;
   color: var(--ink-mid);
   margin-bottom: 20px;
-  animation: fadeUp 0.6s 0.08s ease both;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
 .page-body {
@@ -566,7 +744,7 @@ footer a:hover {
   color: var(--ink-mid);
   line-height: 1.8;
   max-width: 520px;
-  animation: fadeUp 0.6s 0.16s ease both;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
 }
 
 .page-body a {
@@ -578,6 +756,7 @@ footer a:hover {
 
 .page-body a:hover {
   border-color: var(--accent);
+  text-decoration: none;
 }
 
 /* ─── TALKS PAGE ──────────────────────────────── */
@@ -596,7 +775,6 @@ footer a:hover {
   flex-direction: column;
   padding: 24px 0;
   border-bottom: 1px solid var(--rule);
-  animation: fadeUp 0.5s ease both;
 }
 
 .talk-item:first-child {
@@ -640,7 +818,7 @@ footer a:hover {
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 28px;
-  animation: fadeUp 0.6s 0.24s ease both;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
 }
 
 .filter-tag {
@@ -802,7 +980,7 @@ footer a:hover {
   margin-bottom: 52px;
   padding-bottom: 32px;
   border-bottom: 1px solid var(--rule);
-  animation: fadeUp 0.6s ease both;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
 }
 
 .essay-article-title {
@@ -848,7 +1026,7 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  animation: fadeUp 0.6s 0.1s ease both;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
 .essay-article-body p {
@@ -858,11 +1036,6 @@ footer a:hover {
   max-width: 600px;
 }
 
-.essay-article-body p:first-child {
-  font-size: 17px;
-  color: var(--ink);
-  font-weight: 400;
-}
 
 /* Article footer */
 .essay-article-footer {

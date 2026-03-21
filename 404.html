@@ -68,11 +68,30 @@
   <!-- FOOTER -->
   <footer>
     <span>© <span id="year">2025</span> Ridhik Govind</span>
-    <span>Designed &amp; built with care · Kerala, India</span>
+    <span id="footer-quip"></span>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const quips = [
+      "Still not sure if that padding is right.",
+      "The client wanted it blue. We compromised.",
+      "Shipped it anyway.",
+      "Somewhere between the brief and Figma, the truth lives.",
+      "The design was perfect. Then the meeting happened.",
+      "Built with too much tea and not enough sleep.",
+      "The first version was worse. Trust me.",
+      "Figma crashed twice making this.",
+      "The font took longer to pick than the layout.",
+      "Designed by someone who still zooms into pixels at 3am.",
+      "The PM said two weeks. It took four. Worth it.",
+      "Every screen you see went through at least five bad versions first.",
+      "I almost went with a different shade of brown.",
+      "Designed in Kerala, overthought everywhere.",
+      "The spacing is intentional. Mostly."
+    ];
+    document.getElementById("footer-quip").textContent = quips[Math.floor(Math.random() * quips.length)];
   </script>
 
 </body>

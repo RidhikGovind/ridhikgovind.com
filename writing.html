@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Writing — Ridhik Govind</title>
-  <meta name="description" content="Essays and notes by Ridhik Govind on design, AI, process, and the things worth thinking about." />
+  <meta name="description"
+    content="Essays and notes by Ridhik Govind on design, AI, process, and the things worth thinking about." />
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -38,7 +39,7 @@
       <div class="filter-tags" id="filters">
         <button class="filter-tag active" data-filter="all">All</button>
         <button class="filter-tag" data-filter="design">Design</button>
-        <button class="filter-tag" data-filter="ai">AI</button>
+        <!-- <button class="filter-tag" data-filter="ai">AI</button> -->
         <button class="filter-tag" data-filter="process">Process</button>
         <!-- <button class="filter-tag" data-filter="career">Career</button> -->
       </div>
@@ -48,7 +49,7 @@
     <section class="essays-full-section">
       <div class="essay-full-list" id="essayList">
 
-        <a href="writing/designers-using-ai-wrong.html" class="essay-full-item" data-category="ai">
+        <a href="writing/designers-using-ai-wrong.html" class="essay-full-item" data-category="design">
           <div class="essay-full-top">
             <span class="essay-full-title">Designers are using AI the wrong way</span>
           </div>
@@ -58,12 +59,12 @@
           </div>
         </a>
 
-        <a href="writing/nobody-asked-the-right-questions.html" class="essay-full-item" data-category="design">
+        <a href="writing/nobody-asked-the-right-questions.html" class="essay-full-item" data-category="process">
           <div class="essay-full-top">
             <span class="essay-full-title">Nobody asked the right questions. That is why the redesign failed.</span>
           </div>
           <div class="essay-full-meta">
-            <span class="essay-tag">Design</span>
+            <span class="essay-tag">Process</span>
             <span class="essay-full-read-time">3 min read</span>
           </div>
         </a>
@@ -76,11 +77,30 @@
   <!-- FOOTER -->
   <footer>
     <span>© <span id="year">2025</span> Ridhik Govind</span>
-    <span>Designed &amp; built with care · Kerala, India</span>
+    <span id="footer-quip"></span>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const quips = [
+      "Still not sure if that padding is right.",
+      "The client wanted it blue. We compromised.",
+      "Shipped it anyway.",
+      "Somewhere between the brief and Figma, the truth lives.",
+      "The design was perfect. Then the meeting happened.",
+      "Built with too much tea and not enough sleep.",
+      "The first version was worse. Trust me.",
+      "Figma crashed twice making this.",
+      "The font took longer to pick than the layout.",
+      "Designed by someone who still zooms into pixels at 3am.",
+      "The PM said two weeks. It took four. Worth it.",
+      "Every screen you see went through at least five bad versions first.",
+      "I almost went with a different shade of brown.",
+      "Designed in Kerala, overthought everywhere.",
+      "The spacing is intentional. Mostly."
+    ];
+    document.getElementById("footer-quip").textContent = quips[Math.floor(Math.random() * quips.length)];
 
     // Filter logic
     const filters = document.querySelectorAll('.filter-tag');

@@ -80,7 +80,7 @@ body {
 
 /* GLOBAL LINK HOVER UNDERLINE */
 /* Only applies to inline links — block card anchors are excluded */
-a:not(.essay-full-item):not(.essay-item):not(.talk-item):not(.nav-name) {
+a:not(.essay-full-item):not(.essay-item):not(.talk-item):not(.nav-name):not(.work-item) {
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
   text-decoration-color: transparent;
@@ -89,7 +89,7 @@ a:not(.essay-full-item):not(.essay-item):not(.talk-item):not(.nav-name) {
     text-decoration-color 0.2s ease;
 }
 
-a:not(.essay-full-item):not(.essay-item):not(.talk-item):not(.nav-name):hover {
+a:not(.essay-full-item):not(.essay-item):not(.talk-item):not(.nav-name):not(.work-item):hover {
   text-decoration: underline;
   text-decoration-color: var(--accent);
   text-decoration-thickness: 1px;
@@ -1072,4 +1072,87 @@ footer {
 
 .essay-back-link:hover {
   color: var(--accent);
+}
+
+/* ─── WORK PAGE ────────────────────────────── */
+
+.work-section {
+  padding-top: 0;
+}
+
+.work-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.work-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.work-image-container {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--bg-card);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.work-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.work-item:hover .work-image-container img {
+  transform: scale(1.02);
+}
+
+.work-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.work-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.work-title {
+  /* No serif, keeping standard sans like talks / essays unless requested.
+     Wait, it seems other titles like talks are sans too mostly. 
+     If keeping with "essay-full-title", it's 15px font-weight 500. Let's make work title bigger. */
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: color 0.15s;
+}
+
+.work-item:hover .work-title {
+  color: var(--accent);
+}
+
+.work-arrow {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  color: var(--accent);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.work-item:hover .work-arrow {
+  opacity: 1;
+  transform: translateX(0);
 }

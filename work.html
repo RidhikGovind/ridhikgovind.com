@@ -2,11 +2,10 @@
 <html lang="en">
 
 <head>
-  <!-- Primary Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page Not Found — Ridhik Govind</title>
-  <meta name="robots" content="noindex, nofollow" />
+  <title>Work — Ridhik Govind</title>
+  <meta name="description" content="Selected projects and case studies by Ridhik Govind." />
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -16,36 +15,6 @@
   <link rel="shortcut icon" href="/favicon.ico" />
 
   <link rel="stylesheet" href="styles.css">
-
-  <style>
-    .not-found-section {
-      padding: 120px 0;
-      text-align: left;
-    }
-
-    .not-found-title {
-      font-size: 32px;
-      font-weight: 500;
-      color: var(--ink);
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-    }
-
-    .not-found-desc {
-      font-size: 17px;
-      color: var(--ink-mid);
-      margin-bottom: 32px;
-      line-height: 1.6;
-    }
-
-    .not-found-link {
-      display: inline-block;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--accent);
-      text-decoration: none;
-    }
-  </style>
 </head>
 
 <body>
@@ -54,7 +23,7 @@
   <nav>
     <a href="index.html" class="nav-name">Ridhik Govind</a>
     <ul class="nav-links">
-      <li><a href="work.html">Work</a></li>
+      <li><a href="work.html" class="nav-active">Work</a></li>
       <li><a href="writing.html">Writing</a></li>
       <li><a href="talks.html">Talks</a></li>
       <li><a href="how-i-work.html">How I work</a></li>
@@ -62,11 +31,37 @@
   </nav>
 
   <main>
-    <section class="not-found-section">
-      <h1 class="not-found-title">404 - Oopsie! Page not found.</h1>
-      <p class="not-found-desc">Good design is invisible. This page took that too literally.</p>
-      <a href="index.html" class="not-found-link">← Back to home</a>
+
+    <!-- PAGE HEADER -->
+    <section class="page-hero">
+      <h1 class="page-title">Work</h1>
+      <p class="page-sub">Selected projects and case studies I have worked on recently.</p>
     </section>
+
+    <!-- WORK LIST -->
+    <section class="work-section">
+      <div class="work-list">
+
+
+        Work is still under construction. Check back soon.
+
+        <!-- <a href="#" class="work-item">
+          <div class="work-image-container">
+           
+            <img src="https://placehold.co/1200x750/ede5d4/c4703a?text=Dashboard App 1" alt="Dashboard 1">
+          </div>
+          <div class="work-details">
+            <div class="work-title-wrapper">
+              <span class="work-title">Dashboard App 1</span>
+              <span class="work-arrow">→</span>
+            </div>
+            <span class="essay-tag">Case Study</span>
+          </div>
+        </a> -->
+
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -75,6 +70,7 @@
     <span id="footer-quip"></span>
   </footer>
 
+  <script src="update_footers.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 

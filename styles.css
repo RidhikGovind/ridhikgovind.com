@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'Geist';
-  src: url('fonts/Geist-Regular.woff2') format('woff2');
+  src: url('assets/fonts/Geist-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: 'Geist';
-  src: url('fonts/Geist-Medium.woff2') format('woff2');
+  src: url('assets/fonts/Geist-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: 'Geist';
-  src: url('fonts/Geist-SemiBold.woff2') format('woff2');
+  src: url('assets/fonts/Geist-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -26,7 +26,7 @@
 
 @font-face {
   font-family: 'Geist';
-  src: url('fonts/Geist-Bold.woff2') format('woff2');
+  src: url('assets/fonts/Geist-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -34,7 +34,7 @@
 
 @font-face {
   font-family: 'Geist';
-  src: url('fonts/Geist-Black.woff2') format('woff2');
+  src: url('assets/fonts/Geist-Black.woff2') format('woff2');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -264,7 +264,7 @@ section+section {
   left: 50%;
   width: 150px;
   height: 160px;
-  background-image: url('ridhik-polaroid-4-onhover.jpg');
+  background-image: url('assets/images/ridhik-polaroid-4-onhover.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -318,7 +318,7 @@ section+section {
   left: 50%;
   width: 120px;
   height: 48px;
-  background-image: url('wac-logo-onhover.png');
+  background-image: url('assets/images/wac-logo-onhover.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
